@@ -1,0 +1,188 @@
+:root {
+  --strong-cyan: #26c0ab;
+  --very-dark-cyan: #00494d;
+  --dark-grayish-cyan: #5e7a7d;
+  --light-grayish-cyan-first: #c5e4e7;
+  --light-grayish-cyan-second: #f4fafa;
+  --white: #ffffff;
+}
+
+html {
+  font-size: 10px;
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  background-color: var(--light-grayish-cyan-first);
+  font-family: 'Space Mono', sans-serif;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+/* Header */
+
+header {
+  text-align: center;
+  width: 100%;
+  min-height: 20vh;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Base Styles */
+
+.header,
+label {
+  font-size: 1.6rem;
+  color: var(--dark-grayish-cyan);
+  font-family: inherit;
+  font-weight: 600;
+}
+
+.calculator {
+  background-color: var(--white);
+  border-radius: 2.5rem 2.5rem 0 0;
+  min-height: 100vh;
+}
+
+.inner-calculator {
+  padding: 3.2rem;
+  height: 100%;
+}
+
+.bill,
+.tip-selection {
+  font-size: 2.4rem;
+}
+
+.btn {
+  border: none;
+  background-color: var(--very-dark-cyan);
+  color: var(--white);
+  font-size: 2.4rem;
+  padding: 0.6rem;
+  border-radius: 0.5rem;
+  font-family: inherit;
+  font-weight: 600;
+  text-align: center;
+  width: 100%;
+  cursor: pointer;
+}
+
+.btn.selected {
+  background-color: var(--strong-cyan);
+  color: var(--very-dark-cyan);
+}
+
+/* Bill Display */
+
+.bill-display {
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0.5rem;
+  padding: 0.6rem 2rem;
+  background-color: var(--light-grayish-cyan-second);
+}
+
+/* Tip Selection */
+
+.btn-container {
+  grid-template-columns: 1fr 1fr;
+  gap: 1.6rem;
+}
+
+.btn.custom {
+  background-color: var(--light-grayish-cyan-second);
+  color: var(--dark-grayish-cyan);
+}
+
+/* Number of People */
+
+.people-count {
+  flex-direction: column;
+  padding: 0;
+}
+
+.people-count input {
+  display: inline-block;
+  border: none;
+  font-size: 2.4rem;
+  background-color: transparent;
+  text-align: right;
+}
+
+.input-container {
+  position: relative;
+  background-color: var(--light-grayish-cyan-second);
+  width: 100%;
+  padding: 0.6rem 1.8rem;
+  border-radius: 0.5rem;
+}
+
+.input-container img {
+  position: absolute;
+  align-self: center;
+}
+
+/* Tip Display */
+
+.display-total {
+  background-color: var(--very-dark-cyan);
+  border-radius: 1.5rem;
+  padding: 2.4rem;
+}
+
+.amount-display-container {
+  margin-bottom: 2rem;
+  justify-content: space-between;
+}
+
+.amount-display-container h3 {
+  font-size: 1.6rem;
+  color: var(--white);
+  font-weight: 600;
+}
+
+.per-person {
+  font-size: 1.3rem;
+  color: var(--dark-grayish-cyan);
+  font-weight: 600;
+}
+
+.total-display {
+  font-size: 3.2rem;
+  color: var(--strong-cyan);
+  font-weight: 600;
+}
+
+.reset {
+  background-color: var(--strong-cyan);
+  color: var(--very-dark-cyan);
+}
+
+.attribution {
+  font-size: 11px; text-align: center; 
+}
+
+.attribution a { 
+color: hsl(228, 45%, 44%); 
+}
