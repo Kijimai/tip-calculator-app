@@ -19,39 +19,38 @@
 
       <div class="calculator">
         <div class="inner-calculator">
-          <div class="bill">
+          <section class="bill">
             <h2 class="header">Bill</h2>
             <div class="bill-display flex">
               <img src="images/icon-dollar.svg" alt="dollar icon">
-              <input class="total-tip" id="total-tip" value="0">
+              <span><input class="input" type="number" id="total-tip" placeholder="0.00"></span>
             </div>
-          </div>
+          </section>
     
-          <div class="tip-selection">
+          <section class="tip-selection">
             <h2 class="header">Select Tip %</h2>
             <div class="btn-container grid">
               <button class="btn" id="5percent">5%</button>
               <button class="btn" id="10percent">10%</button>
-              <button class="btn selected" id="15percent">15%</button>
+              <button class="btn" id="15percent">15%</button>
               <button class="btn" id="25percent">25%</button>
               <button class="btn" id="50percent">50%</button>
               <button class="btn custom" id="custom">Custom</button>
             </div>
-
-          </div>
+          </section>
     
-          <div class="count-selection">
+          <section class="count-selection">
             <div class="people-count flex">
-              <label for="count">Number of People</label>
+              <h2 class="header">Number of People</h2>
               <div class="input-container flex">
                 <img src="images/icon-person.svg" alt="icon for the count of people">
-                <input id="count" type="number" value="1">
+                <span><input class="input" id="count" type="number" placeholder="1"></span>
               </div>
             </div>
-          </div>
+          </section>
 
 
-          <div class="display-total">
+          <section class="display-total-container">
             <div class="amount-display-container flex">
               <div class="tip-amount">
                 <h3>Tip Amount</h3>
@@ -66,21 +65,18 @@
               </div>
               <span class="total-display">$0.00</span>
             </div>
-
-            <button class="btn reset" id="reset">Reset</button>
-          </div>
+            <button class="btn reset" id="reset">RESET</button>
+          </section>
         </div>
         
       </div>
 
     </main>
 
-    <footer>
-      <div class="attribution">
-        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-        Handcoded by <a href="https://github.com/Kijimai">Kijimai</a>.
-      </div>
-    </footer>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Handcoded by <a href="https://github.com/Kijimai">Kijimai</a>.
+    </div>
     <script src="resources/js/script.js" type="text/javascript"></script>
   </body>
 </html>
