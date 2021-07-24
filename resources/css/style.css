@@ -91,6 +91,8 @@ section {
   color: var(--very-dark-cyan);
 }
 
+
+
 .input {
   width: 100%;
   border: none;
@@ -123,9 +125,18 @@ section {
   gap: 1.6rem;
 }
 
-.btn.custom {
+.custom {
   background-color: var(--light-grayish-cyan-second);
   color: var(--dark-grayish-cyan);
+  border: none;
+  font-size: 2.4rem;
+  padding: 0.6rem;
+  border-radius: 0.5rem;
+  font-family: inherit;
+  font-weight: 600;
+  text-align: center;
+  width: 100%;
+  cursor: pointer;
 }
 
 /* Number of People */

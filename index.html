@@ -23,7 +23,7 @@
             <h2 class="header">Bill</h2>
             <div class="bill-display flex">
               <img src="images/icon-dollar.svg" alt="dollar icon">
-              <span><input class="input" type="number" id="total-tip" placeholder="0.00"></span>
+              <span><input class="input" type="number" id="total-bill" placeholder="0.00"></span>
             </div>
           </section>
     
@@ -35,8 +35,7 @@
               <button class="btn" id="15percent">15%</button>
               <button class="btn" id="25percent">25%</button>
               <button class="btn" id="50percent">50%</button>
-              <button class="btn custom" id="custom">Custom</button>
-            </div>
+              <input min="0" type="number" class="custom" id="custom" placeholder="Custom">
           </section>
     
           <section class="count-selection">
@@ -56,14 +55,14 @@
                 <h3>Tip Amount</h3>
                 <span class="per-person">/ person</span>
               </div>
-              <span class="total-display">$0.00</span>
+              <span id="tip-per-person" class="total-display">$0.00</span>
             </div>
             <div class="amount-display-container flex">
               <div class="total">
                 <h3>Total</h3>
                 <span class="per-person">/ person</span>
               </div>
-              <span class="total-display">$0.00</span>
+              <span id="tip-total" class="total-display">$0.00</span>
             </div>
             <button class="btn reset" id="reset">RESET</button>
           </section>
