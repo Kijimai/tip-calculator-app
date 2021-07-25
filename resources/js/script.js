@@ -25,7 +25,10 @@ bill.addEventListener('input', () => {
   console.log(billAmount)
 })
 
-customPerc.addEventListener('click', () => {
+customPerc.addEventListener('click', (e) => {
+  //recalculates with current value on click
+  selectedTip = (e.target.value/100)
+  recalculateBill(billAmount, selectedTip, numOfPeople)
   btns.forEach(btn => btn.classList.remove('selected'))
   customPerc.addEventListener('input', (e) => {
     selectedTip = (e.target.value/100)
@@ -81,8 +84,14 @@ function recalculateBill(bill, tipPercent, peopleCount) {
   let tipAmountPerPerson = (parseFloat(bill * tipPercent)/peopleCount).toFixed(2)
   let totalPayPerPerson = ((parseFloat(bill)  / peopleCount + parseFloat(tipAmountPerPerson))).toFixed(2)
   console.log(tipAmountPerPerson, totalPayPerPerson)
-  tipTotalDisplay.textContent = totalPayPerPerson
-  tipPerPersonDisplay.textContent = tipAmountPerPerson
+
+  if(!(selectedTip <= 0)) {
+    tipTotalDisplay.textContent = totalPayPerPerson
+    tipPerPersonDisplay.textContent = tipAmountPerPerson
+  } else {
+    tipTotalDisplay.textContent = NaN
+    tipPerPersonDisplay.textContent = NaN
+  }
 }
 
 function displayTips() {

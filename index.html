@@ -18,37 +18,38 @@
     <main>
 
       <div class="calculator">
-        <div class="inner-calculator">
-          <section class="bill">
-            <h2 class="header">Bill</h2>
-            <div class="input-container flex">
-              <img src="images/icon-dollar.svg" alt="dollar icon">
-              <span><input class="input" type="number" min="0" id="total-bill" placeholder="0.00"></span>
-            </div>
-          </section>
-    
-          <section class="tip-selection">
-            <h2 class="header">Select Tip %</h2>
-            <div class="btn-container grid">
-              <button class="btn" id="5percent">5%</button>
-              <button class="btn" id="10percent">10%</button>
-              <button class="btn" id="15percent">15%</button>
-              <button class="btn" id="25percent">25%</button>
-              <button class="btn" id="50percent">50%</button>
-              <input min="0" type="number" class="custom" id="custom" placeholder="Custom">
-          </section>
-    
-          <section class="count-selection">
-            <div class="people-count flex">
-              <h2 class="header">Number of People</h2>
+        <div class="inner-calculator flex">
+          <div class="upper-calc">
+            <section class="bill">
+              <h2 class="header">Bill</h2>
               <div class="input-container flex">
-                <img src="images/icon-person.svg" alt="icon for the count of people">
-                <span><input class="input" id="count" type="number" min="0" placeholder="1"></span>
+                <img src="images/icon-dollar.svg" alt="dollar icon">
+                <span><input class="input" type="number" min="0" id="total-bill" placeholder="0.00"></span>
               </div>
-            </div>
-          </section>
-
-
+            </section>
+      
+            <section class="tip-selection">
+              <h2 class="header">Select Tip %</h2>
+              <div class="btn-container grid">
+                <button class="btn" id="5percent">5%</button>
+                <button class="btn" id="10percent">10%</button>
+                <button class="btn" id="15percent">15%</button>
+                <button class="btn" id="25percent">25%</button>
+                <button class="btn" id="50percent">50%</button>
+                <input min="0" type="number" class="custom" id="custom" placeholder="Custom">
+            </section>
+      
+            <section class="count-selection">
+              <div class="people-count flex">
+                <h2 class="header">Number of People</h2>
+                <div class="input-container flex">
+                  <img src="images/icon-person.svg" alt="icon for the count of people">
+                  <span><input class="input" id="count" type="number" min="0" placeholder="1"></span>
+                </div>
+              </div>
+            </section>
+          </div>
+          
           <section class="display-total-container">
             <div class="amount-display-container flex">
               <div class="tip-amount">

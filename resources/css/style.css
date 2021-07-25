@@ -56,11 +56,14 @@ header {
 .calculator {
   background-color: var(--white);
   border-radius: 2.5rem 2.5rem 0 0;
+  max-width: 92rem;
+  margin: 0 auto;
 }
 
 .inner-calculator {
   padding: 3.2rem;
   height: 100%;
+  flex-direction: column;
 }
 
 section {
@@ -91,8 +94,6 @@ section {
   color: var(--very-dark-cyan);
 }
 
-
-
 .input {
   width: 100%;
   border: none;
@@ -105,16 +106,8 @@ section {
   outline: none;
 }
 
-/* .input:valid {
-  outline: #26c2ae solid 0.2rem;
-} */
-
-/* .input:invalid {
-  outline: #e17457 solid 0.2rem;
-} */
-
-.input:invalid.selected {
-
+.input-container span {
+  width: 100%;
 }
 
 /* Bill Display */
@@ -227,3 +220,34 @@ section {
 color: hsl(228, 45%, 44%); 
 }
 
+@media (min-width: 768px) {
+  
+  .calculator {
+    border-radius: 2.5rem;
+  }
+
+  .inner-calculator {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .upper-calc {
+    max-width: 50%;
+    margin: 0;
+    margin-right: 2.4rem;
+  }
+
+  .display-total-container {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    margin-left: 2.4rem;
+  }
+
+  .btn-container {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.6rem;
+  }
+
+}
