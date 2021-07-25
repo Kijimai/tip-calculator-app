@@ -1,4 +1,4 @@
-// Buttons pointers
+// pointers
 const fivePerc = document.getElementById('5percent') 
 const tenPerc = document.getElementById('10percent') 
 const fifteenPerc = document.getElementById('15percent') 
@@ -14,7 +14,7 @@ const tipPerPersonDisplay = document.getElementById('tip-per-person')
 const tipTotalDisplay = document.getElementById('tip-total')
 
 // store tip % type and show tip totals
-let selectedTip = ''
+let selectedTip = 0.00;
 let billAmount = 0.00
 let totalPerPerson
 let tipPerPerson
@@ -27,54 +27,62 @@ bill.addEventListener('input', () => {
 
 customPerc.addEventListener('click', () => {
   btns.forEach(btn => btn.classList.remove('selected'))
-  console.log(selectedTip)
-})
-
-customPerc.addEventListener('input', () => {
-  selectedTip = customPerc.value
-  console.log(selectedTip)
-  recalculateBill()
+  customPerc.addEventListener('input', (e) => {
+    selectedTip = (e.target.value/100)
+    console.log(selectedTip)
+    recalculateBill(billAmount, selectedTip, numOfPeople)
+  })
 })
 
 btns.forEach(btn => {
   btn.addEventListener('click', addSelectedClass)
-  recalculateBill()
+  console.log(selectedTip)
+  recalculateBill(billAmount, selectedTip, numOfPeople)
 })
 
 peopleCount.addEventListener('input', (e) => {
-  numOfPeople = e.target.value
-  console.log(numOfPeople)
-  recalculateBill()
+  if(e.target.value <= 0) {
+    return
+  }
+  numOfPeople = parseInt(e.target.value)
+  recalculateBill(billAmount, selectedTip, numOfPeople)
 })
 
 function addSelectedClass() {
   btns.forEach(btn => btn.classList.remove('selected'))
   this.classList.add('selected')
-  selectedTip = this.id
-  switch (selectedTip) {
-    case '5percent': 
-      recalculateBill(0.05)
+  let checkTip = this.id
+  switch (checkTip) {
+    case '5percent':
+      selectedTip = 0.05 
+      recalculateBill(billAmount, selectedTip, numOfPeople)
       break;
     case '10percent': 
-      recalculateBill(0.1)
+      selectedTip = 0.1 
+      recalculateBill(billAmount, selectedTip, numOfPeople)
       break;
     case '15percent': 
-      recalculateBill(0.15)
+      selectedTip = 0.15 
+      recalculateBill(billAmount, selectedTip, numOfPeople)
       break;
     case '25percent': 
-      recalculateBill(0.25)
+      selectedTip = 0.25 
+      recalculateBill(billAmount, selectedTip, numOfPeople)
       break;
     case '50percent': 
-      recalculateBill(0.50)
+      selectedTip = 0.5 
+      recalculateBill(billAmount, selectedTip, numOfPeople)
       break;
   }
 }
 
-function recalculateBill(tipPercent) {
-  console.log(billAmount * tipPercent + " tip total")
-  tipTotalDisplay.textContent = (billAmount * tipPercent).toFixed(2)
-  tipPerPersonDisplay.textContent = ((billAmount * tipPercent)/numOfPeople).toFixed(2)
-  console.log((billAmount * tipPercent)/numOfPeople + " per person")
+function recalculateBill(bill, tipPercent, peopleCount) {
+  console.log(bill, tipPercent, peopleCount)
+  let tipAmountPerPerson = (parseFloat(bill * tipPercent)/peopleCount).toFixed(2)
+  let totalPayPerPerson = ((parseFloat(bill)  / peopleCount + parseFloat(tipAmountPerPerson))).toFixed(2)
+  console.log(tipAmountPerPerson, totalPayPerPerson)
+  tipTotalDisplay.textContent = totalPayPerPerson
+  tipPerPersonDisplay.textContent = tipAmountPerPerson
 }
 
 function displayTips() {

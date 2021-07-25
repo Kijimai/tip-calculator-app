@@ -21,9 +21,9 @@
         <div class="inner-calculator">
           <section class="bill">
             <h2 class="header">Bill</h2>
-            <div class="bill-display flex">
+            <div class="input-container flex">
               <img src="images/icon-dollar.svg" alt="dollar icon">
-              <span><input class="input" type="number" id="total-bill" placeholder="0.00"></span>
+              <span><input class="input" type="number" min="0" id="total-bill" placeholder="0.00"></span>
             </div>
           </section>
     
@@ -43,7 +43,7 @@
               <h2 class="header">Number of People</h2>
               <div class="input-container flex">
                 <img src="images/icon-person.svg" alt="icon for the count of people">
-                <span><input class="input" id="count" type="number" placeholder="1"></span>
+                <span><input class="input" id="count" type="number" min="0" placeholder="1"></span>
               </div>
             </div>
           </section>

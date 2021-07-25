@@ -102,16 +102,15 @@ section {
   color: var(--very-dark-cyan);
   font-weight: 700;
   padding: auto;
-  outline: none;
 }
 
-/* .input:valid {
+.input:valid {
   outline: #26c2ae solid 0.2rem;
-} */
+}
 
-/* .input:invalid {
+.input:invalid {
   outline: #e17457 solid 0.2rem;
-} */
+}
 
 .input:invalid.selected {
 
@@ -119,8 +118,9 @@ section {
 
 /* Bill Display */
 
-.input-container {
+.bill-display {
   position: relative;
+  justify-content: space-between;
   align-items: center;
   border-radius: 0.5rem;
   padding: 0.6rem 2rem;
@@ -159,22 +159,13 @@ section {
   padding: 0;
 }
 
-/* .input-container {
+.input-container {
   position: relative;
   background-color: var(--light-grayish-cyan-second);
   width: 100%;
   padding: 0.6rem 1.8rem;
   border-radius: 0.5rem;
-} */
-
-/* .bill-display {
-  position: relative;
-  justify-content: space-between;
-  align-items: center;
-  border-radius: 0.5rem;
-  padding: 0.6rem 2rem;
-  background-color: var(--light-grayish-cyan-second);
-} */
+}
 
 .input-container img {
   position: absolute;
