@@ -43,4 +43,4 @@ The app was certainly a great challenged to learn from, and I plan to redo a sim
 ## Author
 
 - Website - [JDBucog](https://www.jdbucog.com)
-- Frontend Mentor - [@Kijimai](https://www.frontendmentor.io/profile/yourusername)
+- Frontend Mentor - [@Kijimai](https://www.frontendmentor.io/profile/Kijimai)
