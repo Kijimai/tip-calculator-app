@@ -33,6 +33,7 @@ Users should be able to:
 - HTML5
 - CSS Flexbox/Grid
 - Mobile-first workflow
+- Vanilla Javascript
 
 ### What I learned
 
