@@ -23,8 +23,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/Kijimai/tip-calculator-app)
-- Live Site URL: [Add live site URL here](https://kijimai.github.io/tip-calculator-app/)
+- [Solution](https://github.com/Kijimai/tip-calculator-app)
+- [Live Site](https://kijimai.github.io/tip-calculator-app/)
 
 ## My process
 
