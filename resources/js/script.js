@@ -10,6 +10,9 @@ const resetBtn = document.getElementById('reset')
 const bill = document.getElementById('total-bill')
 const peopleCount = document.getElementById('count')
 
+const errorBill = document.getElementById('errorBill')
+const errorPeople = document.getElementById('errorPeople')
+
 const tipPerPersonDisplay = document.getElementById('tip-per-person')
 const tipTotalDisplay = document.getElementById('tip-total')
 
@@ -20,9 +23,27 @@ let totalPerPerson
 let tipPerPerson
 let numOfPeople = 1
 
-bill.addEventListener('input', () => {
-  billAmount = bill.value
-  console.log(billAmount)
+resetBtn.addEventListener('click', resetAll)
+
+bill.addEventListener('input', (e) => {
+  billAmount = parseFloat(e.target.value)
+  let inputContainer = e.target.parentNode.parentNode
+  if(billAmount < 1) {
+    errorBill.textContent = 'Cannot be zero'
+    errorBill.classList.add('active')
+    if(billAmount < 0) {
+      inputContainer.classList.remove('valid')
+      inputContainer.classList.add('invalid')
+      errorBill.textContent = 'Cannot be negative'
+      errorBill.classList.add('active')
+    }
+    inputContainer.classList.remove('valid')
+    inputContainer.classList.add('invalid')
+  } else {
+    errorBill.classList.remove('active')
+    inputContainer.classList.remove('invalid')
+    inputContainer.classList.add('valid')
+  }
 })
 
 customPerc.addEventListener('click', (e) => {
@@ -39,13 +60,27 @@ customPerc.addEventListener('click', (e) => {
 
 btns.forEach(btn => {
   btn.addEventListener('click', addSelectedClass)
-  console.log(selectedTip)
   recalculateBill(billAmount, selectedTip, numOfPeople)
 })
 
 peopleCount.addEventListener('input', (e) => {
-  if(e.target.value <= 0) {
-    return
+  let inputContainer = e.target.parentNode.parentNode
+  if(e.target.value < 1) {
+    errorPeople.textContent = 'Cannot be zero'
+    errorPeople.classList.add('active')
+    if(e.target.value < 0) {
+      inputContainer.classList.remove('valid')
+      inputContainer.classList.add('invalid')
+      errorPeople.textContent = 'No Negatives'
+      errorPeople.classList.add('active')
+    }
+    inputContainer.classList.remove('valid')
+    inputContainer.classList.add('invalid')
+    errorPeople.classList.add('active')
+  } else {
+    errorPeople.classList.remove('active')
+    inputContainer.classList.remove('invalid')
+    inputContainer.classList.add('valid')
   }
   numOfPeople = parseInt(e.target.value)
   recalculateBill(billAmount, selectedTip, numOfPeople)
@@ -80,10 +115,8 @@ function addSelectedClass() {
 }
 
 function recalculateBill(bill, tipPercent, peopleCount) {
-  console.log(bill, tipPercent, peopleCount)
   let tipAmountPerPerson = (parseFloat(bill * tipPercent)/peopleCount).toFixed(2)
   let totalPayPerPerson = ((parseFloat(bill)  / peopleCount + parseFloat(tipAmountPerPerson))).toFixed(2)
-  console.log(tipAmountPerPerson, totalPayPerPerson)
 
   if(!(selectedTip <= 0)) {
     tipTotalDisplay.textContent = totalPayPerPerson
@@ -94,6 +127,13 @@ function recalculateBill(bill, tipPercent, peopleCount) {
   }
 }
 
-function displayTips() {
-
+function resetAll() {
+  bill.value = 0.00
+  selectedTip = 0.00;
+  billAmount = 0.00
+  numOfPeople = 1
+  recalculateBill(billAmount, selectedTip, numOfPeople)
+  tipTotalDisplay.textContent = '0.00'
+  tipPerPersonDisplay.textContent = '0.00'
+  peopleCount.value = 1
 }

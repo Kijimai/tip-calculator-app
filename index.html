@@ -22,6 +22,7 @@
           <div class="upper-calc">
             <section class="bill">
               <h2 class="header">Bill</h2>
+              <span id="errorBill" class="error">Can't be zero</span>
               <div class="input-container flex">
                 <img src="images/icon-dollar.svg" alt="dollar icon">
                 <span><input class="input" type="number" min="0" id="total-bill" placeholder="0.00"></span>
@@ -42,6 +43,7 @@
             <section class="count-selection">
               <div class="people-count flex">
                 <h2 class="header">Number of People</h2>
+                <span id="errorPeople" class="error">Can't be zero</span>
                 <div class="input-container flex">
                   <img src="images/icon-person.svg" alt="icon for the count of people">
                   <span><input class="input" id="count" type="number" min="0" placeholder="1"></span>
@@ -51,19 +53,21 @@
           </div>
           
           <section class="display-total-container">
-            <div class="amount-display-container flex">
-              <div class="tip-amount">
-                <h3>Tip Amount</h3>
-                <span class="per-person">/ person</span>
+            <div class="amounts-container">
+              <div class="amount-display-container flex">
+                <div class="tip-amount">
+                  <h3>Tip Amount</h3>
+                  <span class="per-person">/ person</span>
+                </div>
+                <span id="tip-per-person" class="total-display">$0.00</span>
               </div>
-              <span id="tip-per-person" class="total-display">$0.00</span>
-            </div>
-            <div class="amount-display-container flex">
-              <div class="total">
-                <h3>Total</h3>
-                <span class="per-person">/ person</span>
+              <div class="amount-display-container flex">
+                <div class="total">
+                  <h3>Total</h3>
+                  <span class="per-person">/ person</span>
+                </div>
+                <span id="tip-total" class="total-display">$0.00</span>
               </div>
-              <span id="tip-total" class="total-display">$0.00</span>
             </div>
             <button class="btn reset" id="reset">RESET</button>
           </section>
